@@ -9,14 +9,18 @@ def back_main():
                 if resp.status == 200:
                     JSON_BITCOIN = await resp.json()
                     BTCINFO = dict(JSON_BITCOIN)
-                    BTCPRICE = BTCINFO["price"]
+                    PRICE = BTCINFO["price"]
+                    return PRICE
                 else:
                     print("NOT CONNECT")
+    
             
             
 
             
-    asyncio.run(back())
+    BTCPRICE = asyncio.run(back())
+    return BTCPRICE
+    
 
 
 
